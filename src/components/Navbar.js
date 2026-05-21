@@ -36,17 +36,22 @@ export default function Navbar() {
   const handleLinkClick = (e, targetId) => {
     e.preventDefault();
     closeMobileMenu();
-    const target = document.getElementById(targetId);
-    if (target) {
-      const headerOffset = 80;
-      const elementPosition = target.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    
+    // Short timeout allows the menu to begin transition and body overflow to restore
+    // before calculating the target scroll position.
+    setTimeout(() => {
+      const target = document.getElementById(targetId);
+      if (target) {
+        const headerOffset = 80;
+        const elementPosition = target.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - headerOffset;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }, 150);
   };
 
   return (
@@ -64,17 +69,22 @@ export default function Navbar() {
             <li><a href="#testimonials" onClick={(e) => handleLinkClick(e, 'testimonials')}>Testimonials</a></li>
             <li><a href="#contact" onClick={(e) => handleLinkClick(e, 'contact')}>Contact</a></li>
           </ul>
-          <div className="mobile-menu-btn" onClick={toggleMobileMenu}>
-            <i className="fas fa-bars"></i>
+          <div 
+            className="mobile-menu-btn" 
+            onClick={toggleMobileMenu}
+            aria-label={isMobileMenuOpen ? "Close Menu" : "Open Menu"}
+          >
+            <div className={`hamburger ${isMobileMenuOpen ? 'open' : ''}`}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
           </div>
         </div>
       </nav>
 
       {/* Mobile Navigation Drawer */}
       <div className={`mobile-nav ${isMobileMenuOpen ? 'active' : ''}`}>
-        <div className="close-menu" onClick={closeMobileMenu}>
-          <i className="fas fa-times"></i>
-        </div>
         <ul className="mobile-nav-links">
           <li><a href="#home" onClick={(e) => handleLinkClick(e, 'home')}>Home</a></li>
           <li><a href="#about" onClick={(e) => handleLinkClick(e, 'about')}>About</a></li>
