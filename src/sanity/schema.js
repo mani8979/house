@@ -51,8 +51,11 @@ export const testimonialType = {
     },
     {
       name: 'avatar',
-      title: 'Avatar URL',
-      type: 'url',
+      title: 'Avatar Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
     },
   ],
 };

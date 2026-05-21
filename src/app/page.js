@@ -44,6 +44,11 @@ export default async function Home() {
     image: p.image ? urlFor(p.image).url() : '/assets/images/placeholder.png'
   }));
 
+  const testimonials = testimonialsData.map(t => ({
+    ...t,
+    avatar: t.avatar && typeof t.avatar === 'object' ? urlFor(t.avatar).url() : t.avatar
+  }));
+
   return (
     <>
       <Navbar data={siteData?.navbar} />
@@ -53,7 +58,7 @@ export default async function Home() {
         <Services services={servicesData} />
         <Projects projects={projects} />
         <WhyChooseUs data={siteData?.whyUs} />
-        <Testimonials testimonials={testimonialsData} />
+        <Testimonials testimonials={testimonials} />
         <Instagram data={siteData?.instagram} />
         <Contact data={siteData?.contact} />
       </main>

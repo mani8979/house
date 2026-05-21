@@ -79,8 +79,14 @@ export default function Testimonials({ testimonials = [] }) {
                 </div>
                 <p>"{t.quote}"</p>
                 <div className="client-info">
-                  {/* Avatar using standard image for external pravatar source */}
-                  {t.avatar && <img src={t.avatar} alt={t.name} width={65} height={65} />}
+                  {/* Avatar using standard image for external pravatar source, or fallback icon */}
+                  {t.avatar ? (
+                    <img src={t.avatar} alt={t.name} width={65} height={65} style={{ borderRadius: '50%', objectFit: 'cover' }} />
+                  ) : (
+                    <div style={{ width: 65, height: 65, borderRadius: '50%', backgroundColor: '#f0f0f0', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 24, color: '#ccc' }}>
+                      <i className="fas fa-user"></i>
+                    </div>
+                  )}
                   <div>
                     <h4>{t.name}</h4>
                     <span>{t.role}</span>
