@@ -822,7 +822,7 @@ img {
 
 .testimonial-container {
     position: relative;
-    height: 280px; /* Enhanced container sizing */
+    height: 380px; /* Enhanced container sizing */
     overflow: hidden;
 }
 
@@ -1448,7 +1448,7 @@ footer {
     }
 
     .testimonial-container {
-        height: 360px; /* Extra height on mobile due to text wrapping */
+        height: 460px; /* Extra height on mobile due to text wrapping */
     }
 
     .testimonial-card {
