@@ -1492,7 +1492,7 @@ footer {
     }
     
     footer {
-        padding: 80px 0 30px;
+        padding: 80px 0 110px; /* Added extra bottom padding to clear the floating bottom actions bar */
     }
 
     .footer-about, .footer-links, .footer-social {
@@ -1505,5 +1505,64 @@ footer {
     
     .social-icons {
         justify-content: center;
+    }
+}
+
+/* Mobile Sticky Floating Bottom Actions */
+.mobile-bottom-actions {
+    display: none; /* Hidden on desktop */
+}
+
+@media (max-width: 768px) {
+    .mobile-bottom-actions {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+        padding: 12px 20px;
+        gap: 15px;
+        z-index: 999;
+        box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    .mobile-bottom-actions .action-btn {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--white);
+        transition: var(--transition);
+    }
+
+    .mobile-bottom-actions .call-btn {
+        background-color: var(--secondary); /* Premium Obsidian Black */
+        border: 1px solid var(--secondary);
+    }
+
+    .mobile-bottom-actions .call-btn:hover {
+        background-color: var(--primary); /* Gold hover */
+        border-color: var(--primary);
+    }
+
+    .mobile-bottom-actions .whatsapp-btn {
+        background-color: #25D366; /* WhatsApp Green */
+        border: 1px solid #25D366;
+    }
+
+    .mobile-bottom-actions .whatsapp-btn:hover {
+        background-color: #20ba56;
+        border-color: #20ba56;
     }
 }

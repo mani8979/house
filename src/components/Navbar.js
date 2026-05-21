@@ -121,6 +121,18 @@ export default function Navbar() {
           <li><a href="#contact" onClick={(e) => handleLinkClick(e, 'contact')}>Contact</a></li>
         </ul>
       </div>
+
+      {/* Mobile Sticky Floating Bottom Actions */}
+      {!isMobileMenuOpen && (
+        <div className="mobile-bottom-actions">
+          <a href="tel:+917702313703" className="action-btn call-btn">
+            <i className="fas fa-phone-alt"></i> Call Us
+          </a>
+          <a href="https://wa.me/917702313703" target="_blank" rel="noopener noreferrer" className="action-btn whatsapp-btn">
+            <i className="fab fa-whatsapp"></i> WhatsApp
+          </a>
+        </div>
+      )}
     </>
   );
 }
