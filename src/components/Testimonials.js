@@ -1,39 +1,19 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import Image from 'next/image';
 
-const TESTIMONIALS = [
-  {
-    quote: "HouseStudio transformed our apartment into a dream home. Their attention to detail and choice of materials is unparalleled. Truly a premium experience!",
-    name: "Sarah Johnson",
-    role: "Homeowner, NYC",
-    avatar: "https://i.pravatar.cc/150?u=1"
-  },
-  {
-    quote: "The best interior designers I've worked with. They delivered my modular kitchen ahead of schedule and the finish is just spectacular. Highly recommended.",
-    name: "Michael Chen",
-    role: "Business Owner",
-    avatar: "https://i.pravatar.cc/150?u=2"
-  },
-  {
-    quote: "Professional, creative, and very easy to communicate with. They understood my vision perfectly and executed it beyond my expectations.",
-    name: "Emma Williams",
-    role: "Interior Enthusiast",
-    avatar: "https://i.pravatar.cc/150?u=3"
-  }
-];
-
-export default function Testimonials() {
+export default function Testimonials({ testimonials = [] }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const autoPlayRef = useRef();
 
   const handleNext = () => {
-    setActiveIndex((prev) => (prev + 1) % TESTIMONIALS.length);
+    if (!testimonials.length) return;
+    setActiveIndex((prev) => (prev + 1) % testimonials.length);
   };
 
   const handlePrev = () => {
-    setActiveIndex((prev) => (prev - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
+    if (!testimonials.length) return;
+    setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
   const handleDotClick = (index) => {
@@ -76,6 +56,8 @@ export default function Testimonials() {
     };
   }, []);
 
+  if (!testimonials || testimonials.length === 0) return null;
+
   return (
     <section id="testimonials" className="testimonials" ref={sectionRef}>
       <div className="container">
@@ -87,7 +69,7 @@ export default function Testimonials() {
 
         <div className="testimonial-slider reveal-up">
           <div className="testimonial-container">
-            {TESTIMONIALS.map((t, index) => (
+            {testimonials.map((t, index) => (
               <div
                 key={index}
                 className={`testimonial-card ${index === activeIndex ? 'active' : ''}`}
@@ -98,7 +80,7 @@ export default function Testimonials() {
                 <p>"{t.quote}"</p>
                 <div className="client-info">
                   {/* Avatar using standard image for external pravatar source */}
-                  <img src={t.avatar} alt={t.name} width={65} height={65} />
+                  {t.avatar && <img src={t.avatar} alt={t.name} width={65} height={65} />}
                   <div>
                     <h4>{t.name}</h4>
                     <span>{t.role}</span>
@@ -118,7 +100,7 @@ export default function Testimonials() {
           </div>
 
           <div className="slider-dots">
-            {TESTIMONIALS.map((_, index) => (
+            {testimonials.map((_, index) => (
               <span
                 key={index}
                 className={`dot ${index === activeIndex ? 'active' : ''}`}

@@ -3,34 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
-const PROJECTS = [
-  {
-    image: '/assets/images/kitchen.png',
-    category: 'Modern Design',
-    title: 'Minimalist Kitchen',
-    alt: 'Luxury Kitchen Design'
-  },
-  {
-    image: '/assets/images/bedroom.png',
-    category: 'Luxury Living',
-    title: 'Grand Master Bedroom',
-    alt: 'Luxury Bedroom Design'
-  },
-  {
-    image: '/assets/images/hero.png',
-    category: 'Residential',
-    title: 'Elegant Living Space',
-    alt: 'Modern Living Room Design'
-  },
-  {
-    image: '/assets/images/about.png',
-    category: 'Workspace',
-    title: 'Creative Studio Office',
-    alt: 'Modern Studio Office Design'
-  }
-];
-
-export default function Projects() {
+export default function Projects({ projects = [] }) {
   const sectionRef = useRef(null);
   const [lightboxIndex, setLightboxIndex] = useState(null);
 
@@ -61,16 +34,16 @@ export default function Projects() {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') setLightboxIndex(null);
       if (e.key === 'ArrowRight') {
-        setLightboxIndex((prev) => (prev + 1) % PROJECTS.length);
+        setLightboxIndex((prev) => (prev + 1) % projects.length);
       }
       if (e.key === 'ArrowLeft') {
-        setLightboxIndex((prev) => (prev - 1 + PROJECTS.length) % PROJECTS.length);
+        setLightboxIndex((prev) => (prev - 1 + projects.length) % projects.length);
       }
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [lightboxIndex]);
+  }, [lightboxIndex, projects.length]);
 
   const openLightbox = (index) => {
     setLightboxIndex(index);
@@ -82,6 +55,8 @@ export default function Projects() {
     document.body.style.overflow = '';
   };
 
+  if (!projects || projects.length === 0) return null;
+
   return (
     <section id="projects" className="portfolio" ref={sectionRef}>
       <div className="container">
@@ -92,7 +67,7 @@ export default function Projects() {
         </div>
 
         <div className="portfolio-grid">
-          {PROJECTS.map((project, index) => (
+          {projects.map((project, index) => (
             <div
               key={index}
               className="portfolio-item reveal-up"
@@ -108,7 +83,7 @@ export default function Projects() {
             >
               <Image
                 src={project.image}
-                alt={project.alt}
+                alt={project.alt || project.title}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 style={{ objectFit: 'cover' }}
@@ -137,7 +112,7 @@ export default function Projects() {
             className="lightbox-nav prev"
             onClick={(e) => {
               e.stopPropagation();
-              setLightboxIndex((prev) => (prev - 1 + PROJECTS.length) % PROJECTS.length);
+              setLightboxIndex((prev) => (prev - 1 + projects.length) % projects.length);
             }}
           >
             <i className="fas fa-chevron-left"></i>
@@ -146,8 +121,8 @@ export default function Projects() {
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
             <div className="lightbox-image-container">
               <Image
-                src={PROJECTS[lightboxIndex].image}
-                alt={PROJECTS[lightboxIndex].alt}
+                src={projects[lightboxIndex].image}
+                alt={projects[lightboxIndex].alt || projects[lightboxIndex].title}
                 fill
                 sizes="90vw"
                 style={{ objectFit: 'contain' }}
@@ -156,8 +131,8 @@ export default function Projects() {
               />
             </div>
             <div className="lightbox-meta">
-              <span>{PROJECTS[lightboxIndex].category}</span>
-              <h3>{PROJECTS[lightboxIndex].title}</h3>
+              <span>{projects[lightboxIndex].category}</span>
+              <h3>{projects[lightboxIndex].title}</h3>
             </div>
           </div>
 
@@ -165,7 +140,7 @@ export default function Projects() {
             className="lightbox-nav next"
             onClick={(e) => {
               e.stopPropagation();
-              setLightboxIndex((prev) => (prev + 1) % PROJECTS.length);
+              setLightboxIndex((prev) => (prev + 1) % projects.length);
             }}
           >
             <i className="fas fa-chevron-right"></i>

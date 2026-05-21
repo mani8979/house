@@ -8,18 +8,37 @@ import Testimonials from '@/components/Testimonials';
 import Instagram from '@/components/Instagram';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import { client, urlFor } from '@/sanity/client';
 
-export default function Home() {
+// Keep revalidation if data changes infrequently or just use standard fetch behavior
+export const revalidate = 60; // revalidate every 60 seconds
+
+export default async function Home() {
+  const projectsQuery = `*[_type == "project"]`;
+  const servicesQuery = `*[_type == "service"]`;
+  const testimonialsQuery = `*[_type == "testimonial"]`;
+
+  const [projectsData, servicesData, testimonialsData] = await Promise.all([
+    client.fetch(projectsQuery),
+    client.fetch(servicesQuery),
+    client.fetch(testimonialsQuery)
+  ]);
+
+  const projects = projectsData.map(p => ({
+    ...p,
+    image: p.image ? urlFor(p.image).url() : '/assets/images/placeholder.png'
+  }));
+
   return (
     <>
       <Navbar />
       <main>
         <Hero />
         <About />
-        <Services />
-        <Projects />
+        <Services services={servicesData} />
+        <Projects projects={projects} />
         <WhyChooseUs />
-        <Testimonials />
+        <Testimonials testimonials={testimonialsData} />
         <Instagram />
         <Contact />
       </main>
