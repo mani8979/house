@@ -1,4 +1,4 @@
-import { createClient } from '@sanity/client';
+import { getCliClient } from 'sanity/cli';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -6,18 +6,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Ensure you have loaded env vars if not running via next or dotenv
-// Next.js doesn't auto load for plain node scripts without dotenv, so we will read .env.local manually
-import dotenv from 'dotenv';
-dotenv.config({ path: path.resolve(__dirname, '../.env.local') });
-
-const client = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
-  apiVersion: '2024-05-21',
-  token: process.env.SANITY_API_TOKEN,
-  useCdn: false,
-});
+const client = getCliClient();
 
 const PROJECTS = [
   {
