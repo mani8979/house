@@ -18,11 +18,22 @@ export default async function Home() {
   const servicesQuery = `*[_type == "service"]`;
   const testimonialsQuery = `*[_type == "testimonial"]`;
 
-  const [projectsData, servicesData, testimonialsData] = await Promise.all([
-    client.fetch(projectsQuery),
-    client.fetch(servicesQuery),
-    client.fetch(testimonialsQuery)
-  ]);
+  let projectsData = [];
+  let servicesData = [];
+  let testimonialsData = [];
+
+  try {
+    const results = await Promise.all([
+      client.fetch(projectsQuery),
+      client.fetch(servicesQuery),
+      client.fetch(testimonialsQuery)
+    ]);
+    projectsData = results[0];
+    servicesData = results[1];
+    testimonialsData = results[2];
+  } catch (error) {
+    console.error("Sanity fetch failed:", error.message);
+  }
 
   const projects = projectsData.map(p => ({
     ...p,
