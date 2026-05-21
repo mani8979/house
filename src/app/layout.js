@@ -21,6 +21,9 @@ export const metadata = {
   title: 'HouseStudio Interiors | Premium Modern Interior Design',
   description: 'Transforming spaces into timeless experiences. Premium interior design for modern homes, modular kitchens, villas and luxury spaces in Nellore, Andhra Pradesh.',
   keywords: 'interior design, modular kitchen, home interiors, luxury spaces, Nellore, Vedayapalem, Andhra Pradesh',
+  verification: {
+    google: 'SldWElIQ-tx8DstDxmZIj0oQd8EtuB-1o6StQsjCwAQ',
+  },
 };
 
 export default function RootLayout({ children }) {
