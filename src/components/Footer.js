@@ -76,7 +76,10 @@ export default function Footer({ data }) {
         <div className="footer-bottom">
           <p>{data?.copyrightText || `© ${new Date().getFullYear()} HouseStudio Interiors. All Rights Reserved.`}</p>
           <p style={{ marginTop: '8px', fontSize: '0.9em', color: 'rgba(255,255,255,0.7)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}>
-            Developed by Kalla Venkatesh and number is <i className="fab fa-whatsapp" style={{ color: '#25D366', fontSize: '1.2em' }}></i> 9581108448
+            Developed by Kalla Venkatesh and number is 
+            <a href="https://wa.me/919581108448" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '4px', color: 'inherit', textDecoration: 'none' }}>
+              <i className="fab fa-whatsapp" style={{ color: '#25D366', fontSize: '1.2em' }}></i> 9581108448
+            </a>
           </p>
         </div>
 
