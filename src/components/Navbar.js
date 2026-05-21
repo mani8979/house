@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 
-export default function Navbar() {
+export default function Navbar({ data }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -83,7 +83,7 @@ export default function Navbar() {
       <nav id="navbar" className={isScrolled ? 'scrolled' : ''}>
         <div className="nav-container">
           <a href="#" className="logo" onClick={(e) => handleLinkClick(e, 'home')}>
-            HouseStudio <span>Interiors</span>
+            {data?.logoTextPart1 || 'HouseStudio'} <span>{data?.logoTextPart2 || 'Interiors'}</span>
           </a>
           <ul className="nav-links">
             <li><a href="#home" onClick={(e) => handleLinkClick(e, 'home')}>Home</a></li>
@@ -125,10 +125,10 @@ export default function Navbar() {
       {/* Mobile Sticky Floating Bottom Actions */}
       {!isMobileMenuOpen && (
         <div className="mobile-bottom-actions">
-          <a href="tel:+917702313703" className="action-btn call-btn">
+          <a href={`tel:${data?.phone || '+917702313703'}`} className="action-btn call-btn">
             <i className="fas fa-phone-alt"></i> Call Us
           </a>
-          <a href="https://wa.me/917702313703" target="_blank" rel="noopener noreferrer" className="action-btn whatsapp-btn">
+          <a href={data?.whatsappUrl || "https://wa.me/917702313703"} target="_blank" rel="noopener noreferrer" className="action-btn whatsapp-btn">
             <i className="fab fa-whatsapp"></i> WhatsApp
           </a>
         </div>

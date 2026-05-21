@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import { urlFor } from '@/sanity/client';
 
 function Counter({ target, duration = 2000, suffix = '+' }) {
   const [count, setCount] = useState(0);
@@ -51,7 +52,7 @@ function Counter({ target, duration = 2000, suffix = '+' }) {
   );
 }
 
-export default function About() {
+export default function About({ data }) {
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -74,6 +75,21 @@ export default function About() {
     };
   }, []);
 
+  const features = data?.features?.length ? data.features : [
+    'Modern Interiors',
+    'Modular Kitchens',
+    'Living Room Designs',
+    'Space Planning'
+  ];
+
+  const stats = data?.stats?.length ? data.stats : [
+    { target: 500, suffix: '+', label: 'Projects Completed' },
+    { target: 450, suffix: '+', label: 'Happy Clients' },
+    { target: 15, suffix: '', label: 'Awards Won' }
+  ];
+
+  const imageUrl = data?.sideImage ? urlFor(data.sideImage).url() : "/assets/images/about.png";
+
   return (
     <section id="about" className="about" ref={sectionRef}>
       <div className="container">
@@ -81,7 +97,7 @@ export default function About() {
           
           <div className="about-image reveal-left">
             <Image
-              src="/assets/images/about.png"
+              src={imageUrl}
               alt="Luxury Interior Design Studio"
               width={700}
               height={525}
@@ -89,50 +105,34 @@ export default function About() {
               quality={90}
             />
             <div className="experience-badge">
-              <span className="years">10+</span>
+              <span className="years">{data?.yearsOfExperience || '10+'}</span>
               <span className="text">Years of Excellence</span>
             </div>
           </div>
 
           <div className="about-content reveal-right">
-            <span className="sub-heading">Crafting Excellence</span>
-            <h2>Premium Execution for Your Dream Space</h2>
+            <span className="sub-heading">{data?.subheading || 'Crafting Excellence'}</span>
+            <h2>{data?.heading || 'Premium Execution for Your Dream Space'}</h2>
             <p>
-              At HouseStudio Interiors, we believe that every space has a story to tell. Our approach combines luxury aesthetics with functional design to create environments that inspire and elevate your lifestyle.
+              {data?.description || 'At HouseStudio Interiors, we believe that every space has a story to tell. Our approach combines luxury aesthetics with functional design to create environments that inspire and elevate your lifestyle.'}
             </p>
             
             <div className="about-features">
-              <div className="feature-item">
-                <i className="fas fa-check-circle"></i>
-                <span>Modern Interiors</span>
-              </div>
-              <div className="feature-item">
-                <i className="fas fa-check-circle"></i>
-                <span>Modular Kitchens</span>
-              </div>
-              <div className="feature-item">
-                <i className="fas fa-check-circle"></i>
-                <span>Living Room Designs</span>
-              </div>
-              <div className="feature-item">
-                <i className="fas fa-check-circle"></i>
-                <span>Space Planning</span>
-              </div>
+              {features.map((feature, index) => (
+                <div key={index} className="feature-item">
+                  <i className="fas fa-check-circle"></i>
+                  <span>{feature}</span>
+                </div>
+              ))}
             </div>
 
             <div className="stats-grid">
-              <div className="stat-card">
-                <Counter target={500} suffix="+" />
-                <p>Projects Completed</p>
-              </div>
-              <div className="stat-card">
-                <Counter target={450} suffix="+" />
-                <p>Happy Clients</p>
-              </div>
-              <div className="stat-card">
-                <Counter target={15} suffix="" />
-                <p>Awards Won</p>
-              </div>
+              {stats.map((stat, index) => (
+                <div key={index} className="stat-card">
+                  <Counter target={stat.target} suffix={stat.suffix || ''} />
+                  <p>{stat.label}</p>
+                </div>
+              ))}
             </div>
           </div>
 

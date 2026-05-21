@@ -81,6 +81,8 @@ export const serviceType = {
   ],
 };
 
+import { siteDataType } from './siteData';
+
 export const schema = {
-  types: [projectType, testimonialType, serviceType],
+  types: [projectType, testimonialType, serviceType, siteDataType],
 };

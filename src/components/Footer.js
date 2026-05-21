@@ -1,6 +1,6 @@
 'use client';
 
-export default function Footer() {
+export default function Footer({ data }) {
   const handleLinkClick = (e, targetId) => {
     e.preventDefault();
     const target = document.getElementById(targetId);
@@ -27,7 +27,7 @@ export default function Footer() {
               HouseStudio <span>Interiors</span>
             </a>
             <p>
-              Elevating lifestyles through premium interior design. We create spaces that are as functional as they are beautiful, combining luxury aesthetics with custom details.
+              {data?.description || 'Elevating lifestyles through premium interior design. We create spaces that are as functional as they are beautiful, combining luxury aesthetics with custom details.'}
             </p>
           </div>
 
@@ -74,7 +74,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} HouseStudio Interiors. All Rights Reserved.</p>
+          <p>{data?.copyrightText || `© ${new Date().getFullYear()} HouseStudio Interiors. All Rights Reserved.`}</p>
         </div>
 
       </div>

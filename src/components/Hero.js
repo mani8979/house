@@ -3,7 +3,9 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
-export default function Hero() {
+import { urlFor } from '@/sanity/client';
+
+export default function Hero({ data }) {
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
@@ -27,12 +29,14 @@ export default function Hero() {
     }
   };
 
+  const bgImageUrl = data?.backgroundImage ? urlFor(data.backgroundImage).url() : "/assets/images/hero.png";
+
   return (
     <section id="home" className="hero">
       {/* Background Image using next/image for optimum web vitals */}
       <div className="hero-bg">
         <Image
-          src="/assets/images/hero.png"
+          src={bgImageUrl}
           alt="Premium Living Room"
           fill
           priority
@@ -45,11 +49,11 @@ export default function Hero() {
       
       <div className="hero-content">
         <h1 className={`reveal-up ${isActive ? 'reveal-active' : ''}`}>
-          Transforming Spaces Into <br />
-          <span>Timeless Experiences</span>
+          {data?.headingPart1 || 'Transforming Spaces Into'} <br />
+          <span>{data?.headingPart2 || 'Timeless Experiences'}</span>
         </h1>
         <p className={`reveal-up ${isActive ? 'reveal-active' : ''}`} style={{ transitionDelay: '0.2s' }}>
-          Premium Interior Design Studio for Modern Homes, Apartments & Luxury Spaces
+          {data?.subheading || 'Premium Interior Design Studio for Modern Homes, Apartments & Luxury Spaces'}
         </p>
         <div className={`hero-btns reveal-up ${isActive ? 'reveal-active' : ''}`} style={{ transitionDelay: '0.4s' }}>
           <a
@@ -66,7 +70,7 @@ export default function Hero() {
               }
             }}
           >
-            View Projects
+            {data?.primaryButtonText || 'View Projects'}
           </a>
           <a
             href="#contact"
@@ -82,7 +86,7 @@ export default function Hero() {
               }
             }}
           >
-            Book Consultation
+            {data?.secondaryButtonText || 'Book Consultation'}
           </a>
         </div>
       </div>

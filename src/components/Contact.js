@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 
-export default function Contact() {
+export default function Contact({ data }) {
   const sectionRef = useRef(null);
   const [formData, setFormData] = useState({
     name: '',
@@ -62,16 +62,16 @@ export default function Contact() {
         <div className="contact-grid">
           
           <div className="contact-info reveal-left">
-            <span className="sub-heading">Get In Touch</span>
-            <h2>Let's Create Your <br />Dream Space</h2>
+            <span className="sub-heading">{data?.subheading || 'Get In Touch'}</span>
+            <h2>{data?.heading || "Let's Create Your Dream Space"}</h2>
             
             <div className="info-list">
               <div className="info-item">
                 <i className="fas fa-envelope"></i>
                 <div>
                   <h4>Email Us</h4>
-                  <a href="mailto:housestudiointeriors@gmail.com">
-                    housestudiointeriors@gmail.com
+                  <a href={`mailto:${data?.email || 'housestudiointeriors@gmail.com'}`}>
+                    {data?.email || 'housestudiointeriors@gmail.com'}
                   </a>
                 </div>
               </div>
@@ -80,8 +80,8 @@ export default function Contact() {
                 <i className="fab fa-whatsapp"></i>
                 <div>
                   <h4>WhatsApp</h4>
-                  <a href="https://wa.me/917995827590" target="_blank" rel="noopener noreferrer">
-                    Chat With Us
+                  <a href={data?.phoneUrl || "https://wa.me/917995827590"} target="_blank" rel="noopener noreferrer">
+                    {data?.phoneText || 'Chat With Us'}
                   </a>
                 </div>
               </div>
@@ -90,20 +90,20 @@ export default function Contact() {
                 <i className="fas fa-map-marker-alt"></i>
                 <div>
                   <h4>Visit Us</h4>
-                  <p>Vedayapalem, Nellore,<br />Andhra Pradesh 524004</p>
+                  <p>{data?.address || "Vedayapalem, Nellore, Andhra Pradesh 524004"}</p>
                 </div>
               </div>
             </div>
 
             <div className="map-container">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3862.909772023943!2d79.95654167584164!3d14.415453699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4cf2e055916ad5%3A0xdb73af21e38ada!2sVedayapalem%2C%20Nellore%2C%20Andhra%20Pradesh%20524004!5e0!3m2!1sen!2sin!4v1716298516000!5m2!1sen!2sin"
+                src={data?.mapUrl || "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3862.909772023943!2d79.95654167584164!3d14.415453699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4cf2e055916ad5%3A0xdb73af21e38ada!2sVedayapalem%2C%20Nellore%2C%20Andhra%20Pradesh%20524004!5e0!3m2!1sen!2sin!4v1716298516000!5m2!1sen!2sin"}
                 width="100%"
                 height="280"
                 style={{ border: 0 }}
                 allowFullScreen=""
                 loading="lazy"
-                title="HouseStudio Location Map - Vedayapalem, Nellore"
+                title="HouseStudio Location Map"
               ></iframe>
             </div>
           </div>
