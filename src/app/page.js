@@ -10,8 +10,8 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import { client, urlFor } from '@/sanity/client';
 
-// Keep revalidation if data changes infrequently or just use standard fetch behavior
-export const revalidate = 60; // revalidate every 60 seconds
+// Disable cache so changes from Sanity show instantly
+export const revalidate = 0;
 
 export default async function Home() {
   const projectsQuery = `*[_type == "project"]`;
