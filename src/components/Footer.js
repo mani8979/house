@@ -75,6 +75,7 @@ export default function Footer({ data }) {
 
         <div className="footer-bottom">
           <p>{data?.copyrightText || `© ${new Date().getFullYear()} HouseStudio Interiors. All Rights Reserved.`}</p>
+          <p style={{ marginTop: '8px', fontSize: '0.9em', color: 'rgba(255,255,255,0.7)' }}>Developed by Kalla Venkatesh and number is 9581108448</p>
         </div>
 
       </div>
