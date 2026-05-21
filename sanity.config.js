@@ -1,5 +1,6 @@
 import { defineConfig } from 'sanity';
 import { schema } from './src/sanity/schema';
+import { structureTool } from 'sanity/structure';
 
 export default defineConfig({
   basePath: '/studio',
@@ -7,4 +8,5 @@ export default defineConfig({
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
   title: 'HouseStudio Interiors',
   schema: schema,
+  plugins: [structureTool()],
 });
