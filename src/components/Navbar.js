@@ -20,18 +20,42 @@ export default function Navbar() {
   }, []);
 
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-    if (!isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
+    setIsMobileMenuOpen((prev) => {
+      const nextState = !prev;
+      if (nextState) {
+        document.body.style.overflow = 'hidden';
+        window.history.pushState({ menuOpen: true }, '');
+      } else {
+        document.body.style.overflow = '';
+        if (window.history.state?.menuOpen) {
+          window.history.back();
+        }
+      }
+      return nextState;
+    });
   };
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
     document.body.style.overflow = '';
+    if (window.history.state?.menuOpen) {
+      window.history.back();
+    }
   };
+
+  useEffect(() => {
+    const handlePopState = (event) => {
+      if (isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+        document.body.style.overflow = '';
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+    };
+  }, [isMobileMenuOpen]);
 
   const handleLinkClick = (e, targetId) => {
     e.preventDefault();
@@ -85,6 +109,9 @@ export default function Navbar() {
 
       {/* Mobile Navigation Drawer */}
       <div className={`mobile-nav ${isMobileMenuOpen ? 'active' : ''}`}>
+        <div className="close-menu" onClick={closeMobileMenu} aria-label="Close Menu">
+          <i className="fas fa-times"></i>
+        </div>
         <ul className="mobile-nav-links">
           <li><a href="#home" onClick={(e) => handleLinkClick(e, 'home')}>Home</a></li>
           <li><a href="#about" onClick={(e) => handleLinkClick(e, 'about')}>About</a></li>

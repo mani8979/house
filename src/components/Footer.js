@@ -68,12 +68,6 @@ export default function Footer() {
               >
                 <i className="fab fa-facebook-f"></i>
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
-                <i className="fab fa-pinterest"></i>
-              </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <i className="fab fa-linkedin-in"></i>
-              </a>
             </div>
           </div>
 

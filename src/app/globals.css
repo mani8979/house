@@ -366,6 +366,7 @@ img {
     color: var(--white);
     cursor: pointer;
     transition: var(--transition);
+    z-index: 2600;
 }
 
 .close-menu:hover {
