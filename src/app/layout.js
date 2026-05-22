@@ -23,6 +23,7 @@ export const metadata = {
   keywords: 'interior design, modular kitchen, home interiors, luxury spaces, Nellore, Vedayapalem, Andhra Pradesh',
   verification: {
     google: 'SldWElIQ-tx8DstDxmZIj0oQd8EtuB-1o6StQsjCwAQ',
+  },
 };
 
 export default function RootLayout({ children }) {
