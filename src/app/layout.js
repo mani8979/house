@@ -25,7 +25,7 @@ export const metadata = {
     google: 'SldWElIQ-tx8DstDxmZIj0oQd8EtuB-1o6StQsjCwAQ',
   },
   icons: {
-    icon: '/favicon.ico',
+    icon: '/house-favicon.ico?v=2',
     apple: '/apple-icon.png',
   },
 };
