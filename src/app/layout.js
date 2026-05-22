@@ -18,9 +18,25 @@ const playfair = Playfair_Display({
 });
 
 export const metadata = {
-  title: 'HouseStudio Interiors | Premium Modern Interior Design',
-  description: 'Transforming spaces into timeless experiences. Premium interior design for modern homes, modular kitchens, villas and luxury spaces in Nellore, Andhra Pradesh.',
-  keywords: 'interior design, modular kitchen, home interiors, luxury spaces, Nellore, Vedayapalem, Andhra Pradesh',
+  title: 'HouseStudio Interiors | Premium Home & Villa Interior Design',
+  description: 'Transform your house into a dream home with HouseStudio Interiors. We specialize in premium modern home interiors, modular kitchens, bespoke wardrobes, living room designs, and luxury villa renovations in Nellore, Andhra Pradesh.',
+  keywords: 'house interior design, home interiors, modular kitchen, luxury villa design, living room decor, bedroom interiors, custom wardrobes, modern home renovation, Nellore interior designers, Vedayapalem, Andhra Pradesh, residential interiors, turnkey house projects',
+  openGraph: {
+    title: 'HouseStudio Interiors | Premium Home & Villa Interior Design',
+    description: 'Transform your house into a dream home. Experts in modular kitchens, living spaces, and luxury home interiors.',
+    url: 'https://housestudiointeriors.in',
+    siteName: 'HouseStudio Interiors',
+    images: [
+      {
+        url: '/icon-backup.png',
+        width: 800,
+        height: 600,
+        alt: 'HouseStudio Interiors - Premium Home Design',
+      },
+    ],
+    locale: 'en_IN',
+    type: 'website',
+  },
   verification: {
     google: 'SldWElIQ-tx8DstDxmZIj0oQd8EtuB-1o6StQsjCwAQ',
   },
