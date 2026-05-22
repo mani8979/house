@@ -184,7 +184,6 @@ img {
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-#navbar.scrolled .logo, 
 #navbar.scrolled .nav-links a {
     color: var(--secondary);
 }
