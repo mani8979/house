@@ -1,5 +1,5 @@
 const fs = require('fs');
-const pngToIco = require('png-to-ico');
+const pngToIco = require('png-to-ico').default;
 
 pngToIco('d:/house/src/app/icon.png')
   .then(buf => {
