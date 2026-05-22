@@ -24,7 +24,7 @@ export default function Footer({ data }) {
           
           <div className="footer-about">
             <a href="#" className="logo" onClick={(e) => handleLinkClick(e, 'home')}>
-              HouseStudio <span>Interiors</span>
+              <img src="/assets/images/logo.jpeg" alt="HouseStudio Interiors" style={{ height: '70px', width: 'auto', borderRadius: '4px' }} />
             </a>
             <p>
               {data?.description || 'Elevating lifestyles through premium interior design. We create spaces that are as functional as they are beautiful, combining luxury aesthetics with custom details.'}

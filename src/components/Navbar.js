@@ -83,7 +83,7 @@ export default function Navbar({ data }) {
       <nav id="navbar" className={isScrolled ? 'scrolled' : ''}>
         <div className="nav-container">
           <a href="#" className="logo" onClick={(e) => handleLinkClick(e, 'home')}>
-            {data?.logoTextPart1 || 'HouseStudio'} <span>{data?.logoTextPart2 || 'Interiors'}</span>
+            <img src="/assets/images/logo.jpeg" alt="HouseStudio Interiors" style={{ height: '50px', width: 'auto', borderRadius: '4px' }} />
           </a>
           <ul className="nav-links">
             <li><a href="#home" onClick={(e) => handleLinkClick(e, 'home')}>Home</a></li>

@@ -29,12 +29,11 @@ const SITE_DATA = {
     subheading: 'Crafting Excellence',
     heading: 'Premium Execution for Your Dream Space',
     description: 'At HouseStudio Interiors, we believe that every space has a story to tell. Our approach combines luxury aesthetics with functional design to create environments that inspire and elevate your lifestyle.',
-    yearsOfExperience: '10+',
-    features: ['Modern Interiors', 'Modular Kitchens', 'Living Room Designs', 'Space Planning'],
+    yearsOfExperience: '5+',
+    features: ['Experienced in PVC cupboards', 'Modern Interiors', 'Modular Kitchens', 'Living Room Designs', 'Space Planning'],
     stats: [
-      { _key: 'stat1', target: 500, suffix: '+', label: 'Projects Completed' },
-      { _key: 'stat2', target: 450, suffix: '+', label: 'Happy Clients' },
-      { _key: 'stat3', target: 15, suffix: '', label: 'Awards Won' },
+      { _key: 'stat1', target: 12, suffix: '', label: 'Projects Completed' },
+      { _key: 'stat2', target: 5, suffix: '+', label: 'Years of Experience' }
     ],
     // sideImage: ... we will upload this
   },
