@@ -84,7 +84,10 @@ export default function Navbar({ data }) {
         <div className="nav-container">
           <a href="#" className="logo" onClick={(e) => handleLinkClick(e, 'home')}>
             <img src="/assets/images/logo.jpeg" alt="HouseStudio Interiors" className="nav-logo-img" />
-            {data?.logoTextPart1 || 'HouseStudio'} <span>{data?.logoTextPart2 || 'Interiors'}</span>
+            <div className="logo-text-wrapper" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+              <div>{data?.logoTextPart1 || 'HouseStudio'} <span>{data?.logoTextPart2 || 'Interiors'}</span></div>
+              <span style={{ fontSize: '0.65rem', fontWeight: 500, color: 'var(--secondary)', letterSpacing: '1.5px', marginTop: '-2px', textTransform: 'uppercase', fontFamily: 'var(--font-montserrat)' }}>About Creative</span>
+            </div>
           </a>
           <ul className="nav-links">
             <li><a href="#home" onClick={(e) => handleLinkClick(e, 'home')}>Home</a></li>

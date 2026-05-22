@@ -25,7 +25,10 @@ export default function Footer({ data }) {
           <div className="footer-about">
             <a href="#" className="logo" onClick={(e) => handleLinkClick(e, 'home')}>
               <img src="/assets/images/logo.jpeg" alt="HouseStudio Interiors" className="footer-logo-img" />
-              HouseStudio <span>Interiors</span>
+              <div className="logo-text-wrapper" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                <div>HouseStudio <span>Interiors</span></div>
+                <span style={{ fontSize: '0.65rem', fontWeight: 500, color: 'var(--secondary)', letterSpacing: '1.5px', marginTop: '-2px', textTransform: 'uppercase', fontFamily: 'var(--font-montserrat)' }}>About Creative</span>
+              </div>
             </a>
             <p>
               {data?.description || 'Elevating lifestyles through premium interior design. We create spaces that are as functional as they are beautiful, combining luxury aesthetics with custom details.'}
