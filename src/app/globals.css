@@ -171,7 +171,7 @@ img {
     left: 0;
     width: 100%;
     z-index: 1000;
-    padding: 24px 0;
+    padding: 14px 0; /* Adjusted from 24px to keep overall height 98px with 70px logo */
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
@@ -181,7 +181,7 @@ img {
 }
 
 #navbar.scrolled {
-    padding: 16px 0;
+    padding: 6px 0; /* Adjusted from 16px to keep overall height 82px with 70px logo */
 }
 
 #navbar.scrolled .nav-links a {
@@ -218,7 +218,7 @@ img {
 }
 
 .nav-logo-img {
-    height: 90px;
+    height: 70px;
     width: auto;
     border-radius: 4px;
 }
@@ -1340,11 +1340,11 @@ footer {
     }
     
     #navbar {
-        padding: 16px 0;
+        padding: 5px 0; /* Adjusted from 16px to keep overall height 70px with 60px logo */
     }
 
     #navbar.scrolled {
-        padding: 14px 0;
+        padding: 3px 0; /* Adjusted from 14px to keep overall height 66px with 60px logo */
     }
 
     .logo {
@@ -1354,7 +1354,7 @@ footer {
     }
 
     .nav-logo-img {
-        height: 80px;
+        height: 60px;
     }
 
     .section-header {
