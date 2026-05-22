@@ -86,7 +86,7 @@ export default function Navbar({ data }) {
             <img src="/assets/images/logo.jpeg" alt="HouseStudio Interiors" className="nav-logo-img" />
             <div className="logo-text-wrapper" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
               <div>{data?.logoTextPart1 || 'HouseStudio'} <span>{data?.logoTextPart2 || 'Interiors'}</span></div>
-              <span style={{ fontSize: '0.65rem', fontWeight: 500, color: 'var(--secondary)', letterSpacing: '1.5px', marginTop: '-2px', textTransform: 'uppercase', fontFamily: 'var(--font-montserrat)' }}>About Creative</span>
+              <span style={{ fontSize: '0.65rem', fontWeight: 500, color: 'var(--secondary)', letterSpacing: '1.5px', marginTop: '-2px', textTransform: 'uppercase', fontFamily: 'var(--font-montserrat)' }}>Your Vision, Our Design</span>
             </div>
           </a>
           <ul className="nav-links">

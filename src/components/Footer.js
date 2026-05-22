@@ -27,7 +27,7 @@ export default function Footer({ data }) {
               <img src="/assets/images/logo.jpeg" alt="HouseStudio Interiors" className="footer-logo-img" />
               <div className="logo-text-wrapper" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
                 <div>HouseStudio <span>Interiors</span></div>
-                <span style={{ fontSize: '0.65rem', fontWeight: 500, color: 'var(--secondary)', letterSpacing: '1.5px', marginTop: '-2px', textTransform: 'uppercase', fontFamily: 'var(--font-montserrat)' }}>About Creative</span>
+                <span style={{ fontSize: '0.65rem', fontWeight: 500, color: 'var(--secondary)', letterSpacing: '1.5px', marginTop: '-2px', textTransform: 'uppercase', fontFamily: 'var(--font-montserrat)' }}>Your Vision, Our Design</span>
               </div>
             </a>
             <p>
