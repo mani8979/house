@@ -24,7 +24,7 @@ export default function Footer({ data }) {
           
           <div className="footer-about">
             <a href="#" className="logo" onClick={(e) => handleLinkClick(e, 'home')}>
-              <img src="/assets/images/logo.jpeg" alt="HouseStudio Interiors" style={{ height: '70px', width: 'auto', borderRadius: '4px' }} />
+              <img src="/assets/images/logo.jpeg" alt="HouseStudio Interiors" className="footer-logo-img" />
               HouseStudio <span>Interiors</span>
             </a>
             <p>

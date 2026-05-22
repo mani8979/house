@@ -217,6 +217,18 @@ img {
     color: #65350F;
 }
 
+.nav-logo-img {
+    height: 50px;
+    width: auto;
+    border-radius: 4px;
+}
+
+.footer-logo-img {
+    height: 70px;
+    width: auto;
+    border-radius: 4px;
+}
+
 .nav-links {
     display: flex;
     gap: 45px;
@@ -1328,11 +1340,21 @@ footer {
     }
     
     #navbar {
-        padding: 20px 0;
+        padding: 16px 0;
     }
 
     #navbar.scrolled {
         padding: 14px 0;
+    }
+
+    .logo {
+        font-size: 1.15rem;
+        gap: 6px;
+        white-space: nowrap;
+    }
+
+    .nav-logo-img {
+        height: 38px;
     }
 
     .section-header {
