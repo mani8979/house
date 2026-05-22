@@ -25,7 +25,8 @@ export default function Services({ services = [] }) {
     };
   }, []);
 
-  if (!services || services.length === 0) return null;
+  const filteredServices = services.filter(service => !service.title.toLowerCase().includes('3d visualization'));
+  if (!filteredServices || filteredServices.length === 0) return null;
 
   return (
     <section id="services" className="services" ref={sectionRef}>
@@ -37,7 +38,7 @@ export default function Services({ services = [] }) {
         </div>
 
         <div className="services-grid">
-          {services.map((service, index) => (
+          {filteredServices.map((service, index) => (
             <div
               key={index}
               className="service-card reveal-up"

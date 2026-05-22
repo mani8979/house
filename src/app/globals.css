@@ -206,7 +206,7 @@ img {
     font-family: var(--font-playfair), serif;
     font-size: 1.9rem;
     font-weight: 700;
-    color: var(--white);
+    color: #65350F;
     letter-spacing: -0.5px;
     display: flex;
     align-items: center;
@@ -215,7 +215,7 @@ img {
 
 .logo span {
     font-weight: 400;
-    color: var(--primary);
+    color: #65350F;
     font-style: italic;
 }
 

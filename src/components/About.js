@@ -76,6 +76,7 @@ export default function About({ data }) {
   }, []);
 
   const features = data?.features?.length ? data.features : [
+    'Experienced in PVC cupboards',
     'Modern Interiors',
     'Modular Kitchens',
     'Living Room Designs',
@@ -83,9 +84,8 @@ export default function About({ data }) {
   ];
 
   const stats = data?.stats?.length ? data.stats : [
-    { target: 500, suffix: '+', label: 'Projects Completed' },
-    { target: 450, suffix: '+', label: 'Happy Clients' },
-    { target: 15, suffix: '', label: 'Awards Won' }
+    { target: 12, suffix: '', label: 'Projects Completed' },
+    { target: 5, suffix: '+', label: 'Years of Experience' }
   ];
 
   const imageUrl = data?.sideImage ? urlFor(data.sideImage).url() : "/assets/images/about.png";
@@ -105,8 +105,8 @@ export default function About({ data }) {
               quality={90}
             />
             <div className="experience-badge">
-              <span className="years">{data?.yearsOfExperience || '10+'}</span>
-              <span className="text">Years of Excellence</span>
+              <span className="years">{data?.yearsOfExperience || '5+'}</span>
+              <span className="text">Years of Experience</span>
             </div>
           </div>
 
