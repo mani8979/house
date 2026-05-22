@@ -24,6 +24,13 @@ export const metadata = {
   verification: {
     google: 'SldWElIQ-tx8DstDxmZIj0oQd8EtuB-1o6StQsjCwAQ',
   },
+  icons: {
+    icon: [
+      { url: '/icon.jpeg' },
+      { url: '/assets/images/logo.jpeg' } // Fallback to logo
+    ],
+    apple: '/icon.jpeg',
+  },
 };
 
 export default function RootLayout({ children }) {
