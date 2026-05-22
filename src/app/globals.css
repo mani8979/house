@@ -1144,7 +1144,6 @@ footer {
 }
 
 .footer-about .logo {
-    color: var(--white);
     display: inline-flex;
     margin-bottom: 25px;
 }
