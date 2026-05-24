@@ -1,0 +1,362 @@
+[
+  {
+    "fields": [
+      {
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "name": "alt",
+        "type": "string",
+        "title": "Alt Text"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "image",
+        "type": "image"
+      }
+    ],
+    "name": "project",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "name": "role",
+        "type": "string"
+      },
+      {
+        "name": "quote",
+        "type": "text"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "avatar",
+        "type": "image",
+        "title": "Avatar Image"
+      }
+    ],
+    "name": "testimonial",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "description": "FontAwesome icon class, e.g., fa-home",
+        "name": "icon",
+        "type": "string",
+        "title": "Icon Class"
+      },
+      {
+        "name": "desc",
+        "type": "text",
+        "title": "Description"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "image",
+        "type": "image"
+      }
+    ],
+    "name": "service",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "fields": [
+          {
+            "name": "logoTextPart1",
+            "type": "string",
+            "title": "Logo Text (Main)"
+          },
+          {
+            "name": "logoTextPart2",
+            "type": "string",
+            "title": "Logo Text (Highlight)"
+          },
+          {
+            "name": "phone",
+            "type": "string",
+            "title": "Phone Number"
+          },
+          {
+            "name": "whatsappUrl",
+            "type": "string",
+            "title": "WhatsApp URL"
+          }
+        ],
+        "name": "navbar",
+        "type": "object",
+        "title": "Navbar Settings"
+      },
+      {
+        "fields": [
+          {
+            "name": "headingPart1",
+            "type": "string"
+          },
+          {
+            "name": "headingPart2",
+            "type": "string",
+            "title": "Heading Part 2 (Highlight)"
+          },
+          {
+            "name": "subheading",
+            "type": "string"
+          },
+          {
+            "name": "primaryButtonText",
+            "type": "string"
+          },
+          {
+            "name": "secondaryButtonText",
+            "type": "string"
+          },
+          {
+            "options": {
+              "hotspot": true
+            },
+            "name": "backgroundImage",
+            "type": "image"
+          }
+        ],
+        "name": "hero",
+        "type": "object",
+        "title": "Hero Section"
+      },
+      {
+        "fields": [
+          {
+            "name": "subheading",
+            "type": "string"
+          },
+          {
+            "name": "heading",
+            "type": "string"
+          },
+          {
+            "name": "description",
+            "type": "text"
+          },
+          {
+            "name": "yearsOfExperience",
+            "type": "string",
+            "title": "Years of Experience"
+          },
+          {
+            "options": {
+              "hotspot": true
+            },
+            "name": "sideImage",
+            "type": "image"
+          },
+          {
+            "of": [
+              {
+                "type": "string"
+              }
+            ],
+            "name": "features",
+            "type": "array",
+            "title": "Features List"
+          },
+          {
+            "of": [
+              {
+                "fields": [
+                  {
+                    "name": "target",
+                    "type": "number",
+                    "title": "Target Number"
+                  },
+                  {
+                    "name": "suffix",
+                    "type": "string",
+                    "title": "Suffix (e.g., +)"
+                  },
+                  {
+                    "name": "label",
+                    "type": "string"
+                  }
+                ],
+                "type": "object"
+              }
+            ],
+            "name": "stats",
+            "type": "array",
+            "title": "Stats List"
+          }
+        ],
+        "name": "about",
+        "type": "object",
+        "title": "About Section"
+      },
+      {
+        "fields": [
+          {
+            "name": "subheading",
+            "type": "string"
+          },
+          {
+            "name": "heading",
+            "type": "string"
+          },
+          {
+            "of": [
+              {
+                "fields": [
+                  {
+                    "name": "icon",
+                    "type": "string",
+                    "title": "FontAwesome Icon Class"
+                  },
+                  {
+                    "name": "title",
+                    "type": "string"
+                  },
+                  {
+                    "name": "description",
+                    "type": "text"
+                  }
+                ],
+                "type": "object"
+              }
+            ],
+            "name": "advantages",
+            "type": "array",
+            "title": "Advantages List"
+          }
+        ],
+        "name": "whyUs",
+        "type": "object",
+        "title": "Why Choose Us Section"
+      },
+      {
+        "fields": [
+          {
+            "name": "subheading",
+            "type": "string"
+          },
+          {
+            "name": "heading",
+            "type": "string"
+          },
+          {
+            "name": "instagramUrl",
+            "type": "string",
+            "title": "Instagram URL"
+          },
+          {
+            "name": "facebookUrl",
+            "type": "string",
+            "title": "Facebook URL"
+          },
+          {
+            "of": [
+              {
+                "fields": [
+                  {
+                    "options": {
+                      "hotspot": true
+                    },
+                    "name": "image",
+                    "type": "image"
+                  },
+                  {
+                    "name": "alt",
+                    "type": "string",
+                    "title": "Alt Text"
+                  }
+                ],
+                "type": "object"
+              }
+            ],
+            "name": "images",
+            "type": "array",
+            "title": "Carousel Images"
+          }
+        ],
+        "name": "instagram",
+        "type": "object",
+        "title": "Instagram Section"
+      },
+      {
+        "fields": [
+          {
+            "name": "subheading",
+            "type": "string"
+          },
+          {
+            "name": "heading",
+            "type": "string"
+          },
+          {
+            "name": "email",
+            "type": "string",
+            "title": "Email Address"
+          },
+          {
+            "name": "phoneText",
+            "type": "string",
+            "title": "Phone/WhatsApp Display Text"
+          },
+          {
+            "name": "phoneUrl",
+            "type": "string",
+            "title": "WhatsApp/Phone Link"
+          },
+          {
+            "name": "address",
+            "type": "string",
+            "title": "Address Text"
+          },
+          {
+            "name": "mapUrl",
+            "type": "string",
+            "title": "Google Maps Embed URL"
+          }
+        ],
+        "name": "contact",
+        "type": "object",
+        "title": "Contact Section"
+      },
+      {
+        "fields": [
+          {
+            "name": "description",
+            "type": "text",
+            "title": "Description Text"
+          },
+          {
+            "name": "copyrightText",
+            "type": "string"
+          }
+        ],
+        "name": "footer",
+        "type": "object",
+        "title": "Footer Section"
+      }
+    ],
+    "name": "siteData",
+    "type": "document"
+  }
+]

@@ -171,7 +171,7 @@ img {
     left: 0;
     width: 100%;
     z-index: 1000;
-    padding: 15px 0; /* Accommodate larger 90px logo */
+    padding: 20px 0; /* Accommodate larger 140px logo */
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
@@ -181,7 +181,7 @@ img {
 }
 
 #navbar.scrolled {
-    padding: 10px 0; /* Accommodate larger 90px logo */
+    padding: 10px 0; /* Accommodate smaller logo on scroll */
 }
 
 #navbar.scrolled .nav-links a {
@@ -218,9 +218,14 @@ img {
 }
 
 .nav-logo-img {
-    height: 90px;
+    height: 140px;
     width: auto;
     border-radius: 4px;
+    transition: var(--transition);
+}
+
+#navbar.scrolled .nav-logo-img {
+    height: 80px;
 }
 
 .footer-logo-img {
@@ -420,6 +425,7 @@ img {
     z-index: 10;
     max-width: 1000px;
     padding: 0 24px;
+    margin-top: 120px; /* Account for the larger navbar */
 }
 
 .hero h1 {

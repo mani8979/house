@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-05-21T05:12:21.615Z",
+  "createdAt": "2026-05-24T09:12:11.121Z",
   "studioVersion": "5.26.0",
   "version": 3,
   "workspaces": [
@@ -13,7 +13,7 @@
       },
       "name": "default",
       "projectId": "wzyfwfrj",
-      "schema": "15f0cfd5.create-schema.json",
+      "schema": "7d4e7e73.create-schema.json",
       "title": "HouseStudio Interiors",
       "tools": "a1fd46b5.create-tools.json"
     }
