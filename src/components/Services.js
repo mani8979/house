@@ -44,8 +44,14 @@ export default function Services({ services = [] }) {
               className="service-card reveal-up"
               style={{ transitionDelay: `${index * 0.1}s` }} // Staggered reveal delay
             >
-              <div className="service-icon">
-                <i className={`fas ${service.icon}`}></i>
+              <div className="service-image-container">
+                {service.image ? (
+                  <img src={service.image} alt={service.title} className="service-image" />
+                ) : (
+                  <div className="service-icon">
+                    <i className={`fas ${service.icon}`}></i>
+                  </div>
+                )}
               </div>
               <h3>{service.title}</h3>
               <p>{service.desc}</p>

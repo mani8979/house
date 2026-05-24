@@ -44,6 +44,11 @@ export default async function Home() {
     image: p.image ? urlFor(p.image).url() : '/assets/images/placeholder.png'
   }));
 
+  const services = servicesData.map(s => ({
+    ...s,
+    image: s.image ? urlFor(s.image).url() : '/assets/images/placeholder.png'
+  }));
+
   const testimonials = testimonialsData.map(t => ({
     ...t,
     avatar: t.avatar && typeof t.avatar === 'object' ? urlFor(t.avatar).url() : t.avatar
@@ -55,7 +60,7 @@ export default async function Home() {
       <main>
         <Hero data={siteData?.hero} />
         <About data={siteData?.about} />
-        <Services services={servicesData} />
+        <Services services={services} />
         <Projects projects={projects} />
         <WhyChooseUs data={siteData?.whyUs} />
         <Testimonials testimonials={testimonials} />
