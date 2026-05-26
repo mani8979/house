@@ -94,7 +94,6 @@ export default function Navbar({ data }) {
             <li><a href="#about" onClick={(e) => handleLinkClick(e, 'about')}><i className="fas fa-info-circle" style={{marginRight: '6px'}}></i>About</a></li>
             <li><a href="#services" onClick={(e) => handleLinkClick(e, 'services')}><i className="fas fa-concierge-bell" style={{marginRight: '6px'}}></i>Services</a></li>
             <li><a href="#projects" onClick={(e) => handleLinkClick(e, 'projects')}><i className="fas fa-images" style={{marginRight: '6px'}}></i>Projects</a></li>
-            <li><a href="#testimonials" onClick={(e) => handleLinkClick(e, 'testimonials')}><i className="fas fa-star" style={{marginRight: '6px'}}></i>Testimonials</a></li>
             <li><a href="#contact" onClick={(e) => handleLinkClick(e, 'contact')}><i className="fas fa-envelope" style={{marginRight: '6px'}}></i>Contact</a></li>
           </ul>
           <div 
@@ -121,7 +120,6 @@ export default function Navbar({ data }) {
           <li><a href="#about" onClick={(e) => handleLinkClick(e, 'about')}><i className="fas fa-info-circle" style={{marginRight: '12px'}}></i>About</a></li>
           <li><a href="#services" onClick={(e) => handleLinkClick(e, 'services')}><i className="fas fa-concierge-bell" style={{marginRight: '12px'}}></i>Services</a></li>
           <li><a href="#projects" onClick={(e) => handleLinkClick(e, 'projects')}><i className="fas fa-images" style={{marginRight: '12px'}}></i>Projects</a></li>
-          <li><a href="#testimonials" onClick={(e) => handleLinkClick(e, 'testimonials')}><i className="fas fa-star" style={{marginRight: '12px'}}></i>Testimonials</a></li>
           <li><a href="#contact" onClick={(e) => handleLinkClick(e, 'contact')}><i className="fas fa-envelope" style={{marginRight: '12px'}}></i>Contact</a></li>
         </ul>
       </div>
