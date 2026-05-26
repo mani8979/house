@@ -29,37 +29,6 @@ export const projectType = {
   ],
 };
 
-export const testimonialType = {
-  name: 'testimonial',
-  title: 'Testimonial',
-  type: 'document',
-  fields: [
-    {
-      name: 'name',
-      title: 'Name',
-      type: 'string',
-    },
-    {
-      name: 'role',
-      title: 'Role',
-      type: 'string',
-    },
-    {
-      name: 'quote',
-      title: 'Quote',
-      type: 'text',
-    },
-    {
-      name: 'avatar',
-      title: 'Avatar Image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-    },
-  ],
-};
-
 export const serviceType = {
   name: 'service',
   title: 'Service',
@@ -95,5 +64,5 @@ export const serviceType = {
 import { siteDataType } from './siteData';
 
 export const schema = {
-  types: [projectType, testimonialType, serviceType, siteDataType],
+  types: [projectType, serviceType, siteDataType],
 };
