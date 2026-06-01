@@ -41,7 +41,7 @@ export const metadata = {
     google: 'SldWElIQ-tx8DstDxmZIj0oQd8EtuB-1o6StQsjCwAQ',
   },
   icons: {
-    icon: '/house-favicon.ico?v=2',
+    icon: '/favicon.ico?v=2',
     apple: '/apple-icon.png',
   },
 };
