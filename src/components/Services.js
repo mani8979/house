@@ -6,6 +6,14 @@ export default function Services({ services = [] }) {
   const sectionRef = useRef(null);
 
   useEffect(() => {
+    if (!sectionRef.current) return;
+
+    if (typeof IntersectionObserver === 'undefined') {
+      const cards = sectionRef.current.querySelectorAll('.reveal-up');
+      cards.forEach((card) => card.classList.add('reveal-active'));
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -17,15 +25,15 @@ export default function Services({ services = [] }) {
       { threshold: 0.05, rootMargin: '0px 0px -50px 0px' }
     );
 
-    const cards = sectionRef.current?.querySelectorAll('.reveal-up') || [];
+    const cards = sectionRef.current.querySelectorAll('.reveal-up');
     cards.forEach((card) => observer.observe(card));
 
     return () => {
       cards.forEach((card) => observer.unobserve(card));
     };
-  }, []);
+  }, [services]);
 
-  const filteredServices = services.filter(service => !service.title.toLowerCase().includes('3d visualization'));
+  const filteredServices = services.filter(service => !service.title?.toLowerCase().includes('3d visualization'));
   if (!filteredServices || filteredServices.length === 0) return null;
 
   return (
@@ -40,9 +48,9 @@ export default function Services({ services = [] }) {
         <div className="services-grid">
           {filteredServices.map((service, index) => (
             <div
-              key={index}
+              key={service._id || index}
               className="service-card reveal-up"
-              style={{ transitionDelay: `${index * 0.1}s` }} // Staggered reveal delay
+              style={{ transitionDelay: `${(index % 3) * 0.1}s` }} // Staggered reveal delay
             >
               <div className="service-image-container">
                 {service.image ? (

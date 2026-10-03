@@ -8,6 +8,14 @@ export default function Projects({ projects = [] }) {
   const [lightboxIndex, setLightboxIndex] = useState(null);
 
   useEffect(() => {
+    if (!sectionRef.current) return;
+
+    if (typeof IntersectionObserver === 'undefined') {
+      const items = sectionRef.current.querySelectorAll('.reveal-up');
+      items.forEach((item) => item.classList.add('reveal-active'));
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -19,13 +27,13 @@ export default function Projects({ projects = [] }) {
       { threshold: 0.05, rootMargin: '0px 0px -50px 0px' }
     );
 
-    const items = sectionRef.current?.querySelectorAll('.reveal-up') || [];
+    const items = sectionRef.current.querySelectorAll('.reveal-up');
     items.forEach((item) => observer.observe(item));
 
     return () => {
       items.forEach((item) => observer.unobserve(item));
     };
-  }, []);
+  }, [projects]);
 
   // Keyboard navigation for lightbox
   useEffect(() => {
@@ -69,9 +77,9 @@ export default function Projects({ projects = [] }) {
         <div className="portfolio-grid">
           {projects.map((project, index) => (
             <div
-              key={index}
+              key={project._id || index}
               className="portfolio-item reveal-up"
-              style={{ transitionDelay: `${index * 0.15}s` }}
+              style={{ transitionDelay: `${(index % 2) * 0.12}s` }}
               onClick={() => openLightbox(index)}
               role="button"
               tabIndex={0}
@@ -83,7 +91,7 @@ export default function Projects({ projects = [] }) {
             >
               <Image
                 src={project.image}
-                alt={project.alt || project.title}
+                alt={project.alt || project.title || 'Interior Project'}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 style={{ objectFit: 'cover' }}
@@ -91,8 +99,8 @@ export default function Projects({ projects = [] }) {
               />
               <div className="portfolio-overlay">
                 <div className="portfolio-info">
-                  <span>{project.category}</span>
-                  <h3>{project.title}</h3>
+                  <span>{project.category || 'Interior Design'}</span>
+                  <h3>{project.title || 'House'}</h3>
                 </div>
               </div>
             </div>
@@ -102,7 +110,7 @@ export default function Projects({ projects = [] }) {
       </div>
 
       {/* Premium Lightbox Modal */}
-      {lightboxIndex !== null && (
+      {lightboxIndex !== null && projects[lightboxIndex] && (
         <div className="lightbox" onClick={closeLightbox}>
           <button className="lightbox-close" onClick={closeLightbox}>
             <i className="fas fa-times"></i>
@@ -122,7 +130,7 @@ export default function Projects({ projects = [] }) {
             <div className="lightbox-image-container">
               <Image
                 src={projects[lightboxIndex].image}
-                alt={projects[lightboxIndex].alt || projects[lightboxIndex].title}
+                alt={projects[lightboxIndex].alt || projects[lightboxIndex].title || 'Interior Project'}
                 fill
                 sizes="90vw"
                 style={{ objectFit: 'contain' }}
@@ -131,8 +139,8 @@ export default function Projects({ projects = [] }) {
               />
             </div>
             <div className="lightbox-meta">
-              <span>{projects[lightboxIndex].category}</span>
-              <h3>{projects[lightboxIndex].title}</h3>
+              <span>{projects[lightboxIndex].category || 'Interior Design'}</span>
+              <h3>{projects[lightboxIndex].title || 'House'}</h3>
             </div>
           </div>
 
