@@ -12,6 +12,14 @@ import { client, urlFor } from '@/sanity/client';
 // Disable cache so changes from Sanity show instantly
 export const revalidate = 0;
 
+export const metadata = {
+  title: 'House studio interiors, specialized in PVC & UPVC cupboards',
+  description: 'House Studio Interiors specializes in premium PVC & UPVC cupboards, modular kitchens, custom wardrobes, and luxury home interior design in Nellore, Andhra Pradesh.',
+  alternates: {
+    canonical: 'https://housestudiointeriors.in/',
+  },
+};
+
 export default async function Home() {
   const projectsQuery = `*[_type == "project"]`;
   const servicesQuery = `*[_type == "service"]`;
