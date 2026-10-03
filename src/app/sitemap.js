@@ -3,8 +3,8 @@ export default function sitemap() {
     {
       url: 'https://housestudiointeriors.in',
       lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1,
+      changeFrequency: 'daily',
+      priority: 1.0,
     },
   ];
 }
