@@ -18,7 +18,7 @@ export const metadata = {
   title: 'House studio interiors, specialized in PVC & UPVC cupboards',
   description: 'House Studio Interiors specializes in premium PVC & UPVC cupboards, modular kitchens, custom wardrobes, and luxury home interior design in Nellore, Andhra Pradesh.',
   alternates: {
-    canonical: 'https://housestudiointeriors.in/',
+    canonical: 'https://www.housestudiointeriors.in/',
   },
 };
 

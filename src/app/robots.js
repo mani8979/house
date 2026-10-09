@@ -10,7 +10,7 @@ export default function robots() {
         allow: '/',
       },
     ],
-    sitemap: 'https://housestudiointeriors.in/sitemap.xml',
-    host: 'https://housestudiointeriors.in',
+    sitemap: 'https://www.housestudiointeriors.in/sitemap.xml',
+    host: 'https://www.housestudiointeriors.in',
   };
 }

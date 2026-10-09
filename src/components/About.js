@@ -114,7 +114,9 @@ export default function About({ data }) {
             <span className="sub-heading">{data?.subheading || 'Crafting Excellence'}</span>
             <h2>{data?.heading || 'Premium Execution for Your Dream Space'}</h2>
             <p>
-              {data?.description || 'At HouseStudio Interiors, we believe that every space has a story to tell. Our approach combines luxury aesthetics with functional design to create environments that inspire and elevate your lifestyle.'}
+              {data?.description
+                ? `${data.description}${data.description.includes('PVC and UPVC cupboards') ? '' : ' Specializing in premium PVC and UPVC cupboards for modern homes.'}`
+                : 'At HouseStudio Interiors, we believe that every space has a story to tell. Our approach combines luxury aesthetics with functional design to create environments that inspire and elevate your lifestyle. Specializing in premium PVC and UPVC cupboards for modern homes.'}
             </p>
             
             <div className="about-features">

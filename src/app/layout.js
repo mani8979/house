@@ -18,12 +18,12 @@ const playfair = Playfair_Display({
 });
 
 export const metadata = {
-  metadataBase: new URL('https://housestudiointeriors.in'),
+  metadataBase: new URL('https://www.housestudiointeriors.in'),
   title: 'House studio interiors, specialized in PVC & UPVC cupboards',
   description: 'House Studio Interiors specializes in premium PVC & UPVC cupboards, modular kitchens, custom wardrobes, and luxury home interior design in Nellore, Andhra Pradesh.',
   keywords: 'House studio interiors, PVC cupboards, UPVC cupboards, PVC interior design, UPVC modular cupboards, best interior designers in Nellore, top interior decorators Andhra Pradesh, house interior design, home interiors, modular kitchen designers, luxury villa design, living room decor, bedroom interiors, custom wardrobes, modern home renovation, turnkey house projects, affordable interior design, premium living room decor, bespoke furniture, customized wardrobes, TV unit design, false ceiling design, Vastu compliant interiors, apartment interior design, independent house design, duplex house interiors, villa renovation, residential interiors, commercial interior design, turnkey interior contractors, 2BHK interior design Nellore, 3BHK interior cost, space planning, contemporary home decor, traditional Indian interiors, minimalist house design, smart home interiors, HouseStudio Interiors',
   alternates: {
-    canonical: 'https://housestudiointeriors.in/',
+    canonical: 'https://www.housestudiointeriors.in/',
   },
   robots: {
     index: true,
@@ -39,7 +39,7 @@ export const metadata = {
   openGraph: {
     title: 'House studio interiors, specialized in PVC & UPVC cupboards',
     description: 'House Studio Interiors specializes in premium PVC & UPVC cupboards, modular kitchens, custom wardrobes, and luxury home interior design in Nellore, Andhra Pradesh.',
-    url: 'https://housestudiointeriors.in/',
+    url: 'https://www.housestudiointeriors.in/',
     siteName: 'HouseStudio Interiors',
     images: [
       {
@@ -75,8 +75,8 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'WebSite',
-      '@id': 'https://housestudiointeriors.in/#website',
-      'url': 'https://housestudiointeriors.in/',
+      '@id': 'https://www.housestudiointeriors.in/#website',
+      'url': 'https://www.housestudiointeriors.in/',
       'name': 'House Studio Interiors',
       'alternateName': 'House studio interiors, specialized in PVC & UPVC cupboards',
       'description': 'House Studio Interiors specializes in premium PVC & UPVC cupboards, modular kitchens, and custom interior design in Nellore.',
@@ -84,13 +84,13 @@ const jsonLd = {
     },
     {
       '@type': 'HomeAndConstructionBusiness',
-      '@id': 'https://housestudiointeriors.in/#organization',
+      '@id': 'https://www.housestudiointeriors.in/#organization',
       'name': 'House Studio Interiors',
       'alternateName': 'House studio interiors, specialized in PVC & UPVC cupboards',
       'description': 'House Studio Interiors specializes in premium PVC & UPVC cupboards, modular kitchens, custom wardrobes, and luxury home interior design in Nellore, Andhra Pradesh.',
-      'url': 'https://housestudiointeriors.in/',
-      'logo': 'https://housestudiointeriors.in/assets/images/logo.jpeg',
-      'image': 'https://housestudiointeriors.in/icon-backup.png',
+      'url': 'https://www.housestudiointeriors.in/',
+      'logo': 'https://www.housestudiointeriors.in/assets/images/logo.jpeg',
+      'image': 'https://www.housestudiointeriors.in/icon-backup.png',
       'telephone': '+917995827590',
       'email': 'housestudiointeriors@gmail.com',
       'address': {
